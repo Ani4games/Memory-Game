@@ -5,16 +5,15 @@ import HUD from "./UI/HUD.js";
 const symbols = ["🍎", "🍌", "🍇", "🍒", "🍉", "🥝"];
 
 const boardEl = document.getElementById("board");
-const movesEl = document.getElementById("moves");
+const movesEl = document.getElementById("moves-count");
+const timeEl = document.getElementById("time");
 
-const hud = new HUD(movesEl);
+const hud = new HUD(movesEl, timeEl);
 const game = new Game(
   new Board(boardEl, card => game.handleFlip(card)),
   hud
 );
-
-game.start(symbols);
-
-
-
+document.getElementById("start").addEventListener("click", () => {
+  game.start(symbols);
+});
 

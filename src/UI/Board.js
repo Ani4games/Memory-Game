@@ -15,6 +15,9 @@ export default class Board {
       el.addEventListener("click", () => this.onCardClick(card));
 
       this.container.appendChild(el);
+      console.log('Board.render called');
+      console.log("Board HTML:", this.boardEl.innerHTML);
+
     });
   }
 
